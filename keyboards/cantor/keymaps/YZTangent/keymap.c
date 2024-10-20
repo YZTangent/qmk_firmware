@@ -24,55 +24,55 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *               ┌───┐                   ┌───┐
       *               │Sft├───┐           ┌───┤GUI│
       *               └───┤_L2├───┐   ┌───┤   ├───┘
-      *                   └───┤Alt│   │_L5├───┘
+      *                   └───┤Alt│   │_L3├───┘
       *                       └───┘   └───┘
       */
     [_BL] = LAYOUT_split_3x6_3(
         KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
         KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
         KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_DEL,
-                                            KC_LSFT, MO(_L2), KC_LALT,          MO(_L5), KC_SPC, KC_LGUI
+                                            KC_LSFT, MO(_L2), KC_LALT,          MO(_L3), KC_SPC, KC_LGUI
     ),
 
      /*
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
-      * │Esc│   │ 9 │ 8 │ 7 │ - │       │ \ │'^'│ ^ │ $ │   │Bsp│
+      * │Esc│   │ 9 │ 8 │ 7 │ - │       │ \ │ ( │ ) │   │   │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │Tab│   │ 3 │ 2 │ 1 │ = │       │ 0 │ < │ v │ > │ : │Ent│
+      * │Tab│   │ 6 │ 5 │ 4 │ = │       │ 0 │ { │ } │   │ : │   │
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │Alt│   │ 6 │ 5 │ 4 │ ` │       │   │ % │ ' │ " │   │PRS│
+      * │Ctl│   │ 3 │ 2 │ 1 │ ` │       │ | │ [ │ ] │   │   │   │
       * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
       *               ┌───┐                   ┌───┐
       *               │Sft├───┐           ┌───┤GUI│
       *               └───┤_L2├───┐   ┌───┤   ├───┘
-      *                   └───┤Alt│   │Sft├───┘
+      *                   └───┤Alt│   │_L5├───┘
       *                       └───┘   └───┘
       */
     [_L2] = LAYOUT_split_3x6_3(
-        _______,  XXXXXXX,    KC_9,    KC_8,    KC_7,    KC_MINS,                            KC_BSLS,    S(KC_6),    KC_UP,   S(KC_4),    S(KC_5),    _______,
-        _______,  XXXXXXX,    KC_3,    KC_2,    KC_1,    KC_EQL,                             KC_0,       KC_LEFT,    KC_DOWN, KC_RIGHT,   S(KC_SCLN), _______,
-        _______,  XXXXXXX,    KC_6,    KC_5,    KC_4,    KC_GRV,                             XXXXXXX,    S(KC_5),    KC_QUOT, S(KC_QUOT), XXXXXXX,    KC_PSCR,
-                                            _______, _______, _______,          MO(_L3), _______, _______
+        _______,  XXXXXXX,    KC_9,    KC_8,    KC_7,    KC_MINS,                            KC_BSLS,    S(KC_9),     S(KC_0),      XXXXXXX,  XXXXXXX,     _______,
+        _______,  XXXXXXX,    KC_6,    KC_5,    KC_4,    KC_EQL,                             KC_0,       S(KC_LBRC),  S(KC_RBRC),   XXXXXXX,  S(KC_SCLN),  _______,
+        _______,  XXXXXXX,    KC_3,    KC_2,    KC_1,    KC_GRV,                             KC_PIPE,    KC_LBRC,     KC_RBRC,      XXXXXXX,  XXXXXXX,     _______,
+                                            _______, _______, _______,          MO(_L5), _______, _______
     ),
 
      /*
       * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
-      * │Esc│   │ ( │ * │ & │ _ │       │   │ ( │ ) │   │   │   │
+      * │Esc│   │ ( │ * │ & │ _ │       │ \ │'^'│ ^ │ $ │   │Bsp│
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │Tab│   │ # │ @ │ ! │ + │       │   │ { │ } │   │   │   │
+      * │Tab│   │ # │ @ │ ! │ + │       │ 0 │ < │ v │ > │ : │Ent│
       * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │Alt│   │ ^ │ % │ $ │ ~ │       │   │ [ │ ] │   │   │   │
+      * │Ctl│   │ ^ │ % │ $ │ ~ │       │ | │ ' │ " │   │   │PRS│
       * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
       *               ┌───┐                   ┌───┐
-      *               │Ctl├───┐           ┌───┤GUI│
-      *               └───┤Sft├───┐   ┌───┤   ├───┘
-      *                   └───┤_L2│   │_L3├───┘
+      *               │Sft├───┐           ┌───┤GUI│
+      *               └───┤_L2├───┐   ┌───┤   ├───┘
+      *                   └───┤Alt│   │_L3├───┘
       *                       └───┘   └───┘
       */
     [_L3] = LAYOUT_split_3x6_3(
-        _______, XXXXXXX,    S(KC_9),    S(KC_8),    S(KC_7),    S(KC_MINS),                      XXXXXXX,   S(KC_9),     S(KC_0),      XXXXXXX,  XXXXXXX,   XXXXXXX,
-        _______, XXXXXXX,    S(KC_3),    S(KC_2),    S(KC_1),    S(KC_EQL),                       XXXXXXX,   S(KC_LBRC),  S(KC_RBRC),   XXXXXXX,  XXXXXXX,   XXXXXXX,
-        _______, XXXXXXX,    S(KC_6),    S(KC_5),    S(KC_4),    S(KC_GRV),                       XXXXXXX,   KC_LBRC,     KC_RBRC,      XXXXXXX,  XXXXXXX,   XXXXXXX,
+        _______, XXXXXXX,    S(KC_9),    S(KC_8),    S(KC_7),    S(KC_MINS),                      KC_BSLS,   S(KC_6),    KC_UP,    S(KC_4),   S(KC_5),     _______,
+        _______, XXXXXXX,    S(KC_3),    S(KC_2),    S(KC_1),    S(KC_EQL),                       KC_0,      KC_LEFT,    KC_DOWN,  KC_RIGHT,  S(KC_SCLN),  _______,
+        _______, XXXXXXX,    S(KC_6),    S(KC_5),    S(KC_4),    S(KC_GRV),                       KC_PIPE,   KC_QUOT, S(KC_QUOT),  XXXXXXX,   XXXXXXX,     KC_PSCR,
                                             _______, _______, _______,          MO(_L3), _______, _______
     ),
 
@@ -85,9 +85,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       * │Alt│PWR│WAK│SLP│MUT│   │       │   │   │   │   │   │   │
       * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
       *               ┌───┐                   ┌───┐
-      *               │Ctl├───┐           ┌───┤GAM│
-      *               └───┤Sft├───┐   ┌───┤   ├───┘
-      *                   └───┤_L2│   │_L5├───┘
+      *               │Sft├───┐           ┌───┤GAM│
+      *               └───┤_L2├───┐   ┌───┤   ├───┘
+      *                   └───┤Alt│   │_L5├───┘
       *                       └───┘   └───┘
       */
     [_L5] = LAYOUT_split_3x6_3(
@@ -110,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *               └───┤_L2├───┐   ┌───┤   ├───┘
       *                   └───┤_G2│   │_L5├───┘
       *                       └───┘   └───┘
-      */  
+      */
     [_G1] = LAYOUT_split_3x6_3(
         KC_ESC, KC_T,     KC_Q,    KC_W,    KC_E,    KC_R,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
         KC_TAB, KC_LSFT,  KC_A,    KC_S,    KC_D,    KC_F,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
